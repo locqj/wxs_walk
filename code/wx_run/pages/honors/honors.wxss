@@ -7,10 +7,12 @@
 }
 .content .power {
   height: 250rpx;
-  font-size: 200rpx;
-  font-weight: bold
+  font-size: 180rpx;
+  font-weight: bold;
+  padding-top: -2%; 
 }
 .content .power-title {
+  margin-top: 5%;
   display: inline-flex;
   align-items: flex-start
 }

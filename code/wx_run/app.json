@@ -6,7 +6,9 @@
     "pages/charts/charts",
     "pages/targets/targets",
     "pages/editinfo/editinfo",
-    "pages/powerlogs/powerlogs"
+    "pages/powerlogs/powerlogs",
+    "pages/honors/honors",
+    "pages/explain/explain"
   ],
   "window":{
     "backgroundTextStyle":"light",

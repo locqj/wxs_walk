@@ -1,4 +1,4 @@
-// pages/powerlogs/powerlo.js
+// pages/explain/explain.js
 Page({
 
   /**

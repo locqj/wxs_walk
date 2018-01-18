@@ -1,6 +1,6 @@
 <view class='content'>
-  <view class='power'>2</view>
-  <view class='power-title'>当前能量点</view>
+  <view class='power-title'>历史累计步数</view>
+  <view class='power'>7000</view>
   <view class='list-line'></view>
 
   <view class='list-boxing' wx:for="{{item}}">
@@ -14,7 +14,7 @@
     </view>
     <view class='list-content'>
       <image src='../../imgs/clc-s.png'></image>
-      <view class='list-content-msg'>完成了8000目标</view>
+      <view class='list-content-msg'>7000步</view>
       <view class='list-content-power'>1</view>
     </view>
   </view>

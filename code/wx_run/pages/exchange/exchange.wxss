@@ -4,7 +4,6 @@
   align-items: center;
   font-size: small;
   width: 100%;
-  
   background-color: #eee
 }
 .content .power {
@@ -71,5 +70,4 @@
 }
 .item-line {
   display: flex;
-
 }

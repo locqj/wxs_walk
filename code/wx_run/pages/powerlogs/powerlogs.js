@@ -1,11 +1,11 @@
-// pages/powerlogs/powerlogs.js
+// pages/powerlogs/power.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    item: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   },
 
   /**
