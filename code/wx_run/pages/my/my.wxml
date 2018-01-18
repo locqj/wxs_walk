@@ -1,0 +1,40 @@
+<view class="content">
+  <image src="{{userinfo.avatarUrl}}" class="user-avator"></image>
+  <view class='nickname'>{{userinfo.nickName}}</view>
+  <view class='info-edit'>
+    <navigator url="../editinfo/editinfo">
+      <image src='../../imgs/edit.png'></image>
+    </navigator>
+  </view>
+  
+  <view class="user-info">
+    <view class='user-info-item'>
+      <view class='item-title'>年龄</view>
+      <view class='item-data'>
+        <span>{{age}}</span>岁</view>
+    </view>
+    <view class='user-info-item'>
+      <view class='item-title'>身高</view>
+      <view class='item-data'>
+        <span>{{height}}</span>cm</view>
+    </view>
+    <view class='user-info-item'>
+      <view class='item-title'>体重</view>
+      <view class='item-data'>
+        <span>{{weight}}</span>kg</view>
+    </view>
+  </view>
+
+  <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">能量记录</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">我的成就</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url="" class="weui-cell weui-cell_access list-line" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">问题解答</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>

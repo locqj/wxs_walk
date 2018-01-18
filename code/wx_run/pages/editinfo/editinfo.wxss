@@ -1,0 +1,35 @@
+/* pages/editinfo/editinfo.wxss */
+.content{
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  width: 100%;
+}
+.info {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  width: 100%;
+  margin: 7% 5%;
+}
+.info image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 38rpx 
+}
+.info .username {
+  font-size: small;
+}
+.page__bd, .weui-btn {
+  width: 100%
+}
+.weui-btn-area picker button {
+  text-align: left;
+  padding-left: 7%;
+  
+}
+.weui-btn-area picker button span {
+  margin-left: 10%; 
+  color: #999
+
+}

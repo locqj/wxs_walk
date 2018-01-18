@@ -1,0 +1,26 @@
+<view class="content">
+  <view class='info'>
+    <image src='{{userinfo.avatarUrl}}'></image>
+    <view class='username'>{{userinfo.nickName}}</view>
+  </view>
+
+  <view class="page__bd">
+    <view class="weui-btn-area">
+      <picker class="weui-btn" bindchange="bindAgeChange" value="{{indexSex}}" range="{{sexs}}">
+        <button type="default">性别 <span>{{sexs[indexSex]}}</span></button>
+      </picker>
+      <picker class="weui-btn" mode="date" value="{{date}}" start="1900-01-01" end="2018-01-01" bindchange="bindDateChange">
+        <button type="default">生日 <span>{{date}}</span></button>
+      </picker>
+      <picker class="weui-btn" bindchange="bindHeightChange" value="{{indexHeight}}" range="{{heights}}">
+        <button type="default">身高 <span>{{heights[indexHeight]}}</span></button>
+      </picker>
+      <picker class="weui-btn" bindchange="bindWeightChange" value="{{indexWeight}}" range="{{weights}}">
+        <button type="default">体重 <span>{{weights[indexWeight]}}</span></button>
+      </picker>
+      <button class="weui-btn" type="primary">完成</button>
+    </view>
+  </view>
+  
+
+</view>

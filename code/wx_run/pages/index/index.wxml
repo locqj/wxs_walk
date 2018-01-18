@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='header'>
+    <view class='header-item' bindtap='charts'>
+      <image src="../../imgs/paihangbang.png"></image>
+    </view>
+    <view class='header-item' bindtap='target'>
+      <image src="../../imgs/jifen.png"></image>
+    </view>
+  </view>
+  <view class='main'>
+    <canvas canvas-id="canvasCircle" id="canvas-print">
+    </canvas>
+  </view>
+  <view class='targettext'>
+    当日目标步数{{ targetstep }}，未完成
+  </view>
+  <view class='msg-card'>
+    <view class='msg-icon'>
+      <image src="../../imgs/zan.png"></image>
+    </view>
+    <view class='msg-content'>
+      <view class='msg-content-date'>2018/01/17</view>
+      <view class='msg-content-title'>消耗能量</view>
+      <view class='msg-content-tips '>相当于0.13杯威露士</view>
+    </view>
+    <view class='msg-num'>
+      <span class="msg-num-kcal">2</span><span class="msg-num-units">kcal</span>
+    </view>
+  </view>
+
+  <view class='msg-card'>
+    <view class='msg-icon'>
+      <image src="../../imgs/zan.png"></image>
+    </view>
+    <view class='msg-content'>
+      <view class='msg-content-date'>2018/01/17</view>
+      <view class='msg-content-title'>运动距离</view>
+      <view class='msg-content-tips '>相当于0.1圈小圈圈</view>
+    </view>
+    <view class='msg-num'>
+      <span class="msg-num-kcal">2</span><span class="msg-num-units">kcal</span>
+    </view>
+  </view>
+</view>

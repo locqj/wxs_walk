@@ -1,0 +1,12 @@
+<view class='content'>
+  <swiper class='swiper-boxing' bindchange="onchange">
+    <block wx:for="{{imgUrls}}" wx:key="key">
+      <swiper-item class="swiper-item-boxing">
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="swiper-step">{{step}}步</view>
+  <view class='swiper-title'>左右滑动选择目标步数</view>
+  <button class="weui-btn set-btn">设定目标步数</button>
+</view>

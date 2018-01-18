@@ -1,0 +1,25 @@
+.content{
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  align-items: center
+}
+.swiper-boxing {
+  margin: 5% 0;
+  width: 90%;
+  height: 600rpx
+}
+.swiper-item-boxing {
+  width: 100%;
+}
+.slide-image {
+  width: 100%;
+}
+.swiper-step {
+  font-size: xx-large;
+  font-weight: bold
+}
+.set-btn {
+  background-color: #84C5D4;
+  color: #fff
+}

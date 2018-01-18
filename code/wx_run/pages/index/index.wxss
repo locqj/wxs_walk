@@ -1,0 +1,96 @@
+/**index.wxss**/
+.container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #EBF7FB  
+}
+.header {
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+.header-item {
+  width: 70rpx;
+  height: 70rpx;
+  padding: 4% 6%;
+}
+.header-item image {
+  width: 70rpx;
+  height: 70rpx;
+}
+.main {
+  width: 100%;
+  height: 600rpx;
+}
+.main canvas {
+  display: flex;
+  width: 100%;
+  height: 100%
+}
+.targettext {
+  height: 50rpx;
+  font-size: small;
+  color: #999999;
+  padding-bottom: 30rpx; 
+}
+.msg-card {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 1rpx solid #eee 
+}
+.msg-card .msg-icon {
+  width: 50rpx;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-around;
+
+}
+.msg-card .msg-icon image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.msg-card .msg-content {
+  flex-grow: 2;
+}
+.msg-card .msg-content .msg-content-date {
+  color: #999;
+  font-size: small;
+  margin-top: 3%;
+}
+.msg-card .msg-content .msg-content-title {
+  color: #3E4858;
+  font-size: medium;
+  margin: 1% 0;
+  font-weight: bold
+}
+.msg-card .msg-content .msg-content-tips {
+  color: #999;
+  font-size: small;
+  margin-bottom: 3%;
+}
+.msg-card .msg-num {
+  flex-grow: 1;
+  display: inline-flex;
+  align-items: center;
+  font-size: small
+}
+.msg-card .msg-num .msg-num-kcal {
+  color: #8DC4D4;
+  font-weight: bold;
+  font-size: xx-large
+}
+.msg-card .msg-num .msg-num-units {
+  margin-left: 2%;
+  margin-top: 10%;
+}
+
+

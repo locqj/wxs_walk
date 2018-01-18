@@ -1,0 +1,60 @@
+page,
+.page,
+.page__bd{
+    height: 100%;
+    color: #999
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-navbar{
+  background-color: #fff
+}
+.weui-tab__content{
+  display: flex;
+  flex-direction: column;
+}
+.list-line {
+  width: 100%;
+  height: 40rpx;
+  background-color: #eee
+}
+.charts-list {
+  display: flex;
+  width: 100%;
+  margin: 2% 4%;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+  border-bottom: 1rpx solid #eee
+}
+.myself {
+  margin-bottom: 0
+}
+.charts-list .list-index {
+  flex-grow: 1;
+}
+.charts-list .list-userinfo {
+  flex-grow: 4;
+  
+}
+.charts-list .list-step {
+  flex-grow: 1;
+}
+.charts-list .list-userinfo .userinfo-avator {
+  width: 80rpx;
+  height: 80rpx
+}
+.charts-list .list-userinfo .userinfo-name {
+  display: inline-flex;
+  align-items: center
+}
+.charts-list list-step {
+}
+.weui-navbar__item.weui-bar__item_on {
+  color:#000;
+  font-weight: bold
+}
+.weui-navbar__slider {
+  background-color: #84C5D4
+}

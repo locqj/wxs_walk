@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/exchange/exchange",
+    "pages/my/my",
+    "pages/charts/charts",
+    "pages/targets/targets",
+    "pages/editinfo/editinfo",
+    "pages/powerlogs/powerlogs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "步数换沙拉",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#ddd",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "selectedColor": "#119fea",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "步数",
+        "iconPath": "./imgs/bushu.png",
+        "selectedIconPath": "./imgs/bushu-s.png"
+      },
+      {
+        "pagePath": "pages/exchange/exchange",
+        "text": "兑换",
+        "iconPath": "./imgs/shangcheng.png",
+        "selectedIconPath": "./imgs/shangcheng-s.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./imgs/my.png",
+        "selectedIconPath": "./imgs/my-s.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
