@@ -3,12 +3,14 @@
   display: flex;
   flex-flow: column;
   align-items: center;
+  font-size: 33rpx
+
 }
 .content image {
   width: 200rpx;
   height: 200rpx;
   border-radius: 30rpx;
-  margin-top: 20%;
+  margin-top: 10%;
 }
 .info-edit image{
   width: 45rpx;
@@ -39,5 +41,13 @@
 .list-line {
   border-top: 45rpx solid #eee;
   border-bottom: 1rpx solid #eee  
+}
+.user-info-item .item-title {
+  color: #999
+}
+.user-info-item .item-data span{
+  font-weight: bold;
+  font-size: 40rpx;
+  margin-right: 5rpx
   
 }

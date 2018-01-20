@@ -19,6 +19,7 @@
   margin-top: 5%;
   border: 1rpx solid #eee;
 }
+
 .list-boxing {
   display: flex;
   flex-flow: column;

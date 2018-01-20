@@ -1,0 +1,52 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content content" hidden="{{activeIndex != 0}}">
+          <!--  -->
+          <view class='change-list' wx:for="{{item}}">
+            <image src="{{test_img}}" class="change-img"
+              style='width: 146rpx; height: 140rpx'></image>
+            <view class='change-content'>
+              <view class='change-title'>和风蛋谷物肌肉沙sadasadassa拉梅子酱</view>
+              <view class='change-use'>核销截止日期
+                <span>2017-05-12</span>
+              </view>
+            </view>
+            <button class='change-btn' bindtap='btnsub'>核销</button>
+            <!-- <view class='list-line item-line'></view> -->
+          </view>
+          <!--  -->
+        </view>
+
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <!-- hexiao -->
+          <view class='list-boxing' wx:for="{{item}}">
+            <view class='list-title'>
+              <image src="../../imgs/clc.png" class='list-title-index'></image>
+              <view class='list-title-data'>2017-01-01</view>
+              <view class='list-title-power'>
+                -2
+                <image src='../../imgs/powera.png' class='list-title-powericon'></image>
+              </view>
+            </view>
+            <view class='list-content'>
+              <image src='../../imgs/clc-s.png'></image>
+              <view class='list-content-msg'>核销xxx</view>
+              <view class='list-content-power'>1</view>
+            </view>
+          </view>
+          <!--end hexiao  -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

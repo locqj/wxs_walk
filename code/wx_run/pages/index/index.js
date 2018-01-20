@@ -7,14 +7,14 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    targetstep: 0
+    targetstep: 0,
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
-  }, 
+  },
   onReady: function (e) {
     let _this = this
     let query = wx.createSelectorQuery();
@@ -44,12 +44,12 @@ Page({
       ctx.beginPath()
       ctx.setLineWidth(35)
       ctx.setStrokeStyle('#D4E8ED')
-      ctx.arc(midwidth, midheight, midheight * 0.78, 0, 2 * Math.PI, false)
+      ctx.arc(midwidth, midheight, midheight * 0.7, 0, 2 * Math.PI, false)
       ctx.stroke()
 
 
       ctx.beginPath()
-      ctx.arc(midwidth, midheight, midheight * 0.7, 0, 2 * Math.PI)
+      ctx.arc(midwidth, midheight, midheight * 0.62, 0, 2 * Math.PI)
       ctx.setFillStyle('#FFFFFF')
       ctx.fill()
 
@@ -58,29 +58,40 @@ Page({
       ctx.beginPath()
       ctx.setLineWidth(30)
       ctx.setStrokeStyle('#97E4E7')
-      ctx.arc(midwidth, midheight, midheight * 0.8, start, end, false)
+      ctx.arc(midwidth, midheight, midheight * 0.72, start, end, false)
       ctx.stroke()
 
       ctx.beginPath()
       ctx.setFillStyle('#3E4858')
-      ctx.setFontSize(40)
+      ctx.setFontSize(38)
       ctx.fillText(newstep, midwidth, midheight)
 
       ctx.beginPath()
       ctx.setFillStyle('#444444')
-      ctx.setFontSize(13)
+      ctx.setFontSize(10)
       ctx.fillText('当前步数', midwidth, midheight + 30)
-
-      // ctx.beginPath()
-      // ctx.setFillStyle('#444444')
-      // ctx.setFontSize(13)
-      // ctx.fillText('当日目标' + targetstep + '步，未完成', midwidth, midheight +150)
-
       ctx.draw()
     })
 
   },
   onLoad: function () {
+    let that = this
+    wx.login({
+      success: function(res) {
+        let code = res.code
+        that.setData({ code: code })
+        wx.getWeRunData({//解密微信运动
+          success(res) {
+            const wRunEncryptedData = res.encryptedData
+            that.setData({ encryptedData: wRunEncryptedData })
+            that.setData({ iv: res.iv })
+            that.get3rdSession()//解密请求函数
+          }
+        })
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -108,14 +119,46 @@ Page({
       })
     }
   },
-  getRunData: function(e) {
-    wx.getWeRunData({
-      success(res) {
-        console.log(res)
-        const encryptedData = res.encryptedData
+  get3rdSession: function () {
+    let that = this
+    wx.request({
+      url: 'https://wx.locqj.top/api/getsessionkey',
+      data: {
+        code: this.data.code
+      },
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      success: function (res) {
+        let sessionId = res.data;
+        console.log(typeof (sessionId))
+        that.setData({ sessionId: sessionId })
+        wx.setStorageSync('sessionId', sessionId)
+        console.log(that.data.sessionId)
+        that.decodeUserInfo()
       }
     })
   },
+
+  decodeUserInfo: function () {
+    let that = this
+    wx.request({
+      url: 'https://wx.locqj.top/api/decrypt',
+      data: {
+        encryptedData: that.data.encryptedData,
+        iv: that.data.iv,
+        sessionkey: that.data.sessionId
+      },
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function (res) {
+        console.log(res)
+        // let todayStep = res.data.stepInfoList.pop()
+        // that.setData({
+        //   step: todayStep.step
+        // });
+      }
+    })
+  },
+
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo

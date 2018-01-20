@@ -8,7 +8,9 @@
     "pages/editinfo/editinfo",
     "pages/powerlogs/powerlogs",
     "pages/honors/honors",
-    "pages/explain/explain"
+    "pages/explain/explain",
+    "pages/verification/verification",
+    "pages/qrcode/qrcode"
   ],
   "window":{
     "backgroundTextStyle":"light",
