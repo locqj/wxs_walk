@@ -15,7 +15,10 @@
     <canvas canvas-id="canvasCircle" id="canvas-print">
     </canvas>
   </view>
-  <view class='targettext'>
+  <view class='targettext' wx:if="{{hasTarget}}">
+    当日目标步数{{ targetstep }}，已完成
+  </view>
+  <view class='targettext' wx:else>
     当日目标步数{{ targetstep }}，未完成
   </view>
   <view class='msg-card'>

@@ -13,7 +13,8 @@ Page({
     power_kcal: 0,
     sport_distance: 0,
     ground_distance: 0,
-    rice_g: 0
+    rice_g: 0,
+    hasTarget: false
   },
   //事件处理函数
   bindViewTap: function () {
@@ -141,6 +142,10 @@ Page({
         wx.setStorage({ key: "openid", data: that.data.openid })
         wx.setStorage({ key: "userlog", data: that.data.userlog })
         wx.setStorage({ key: 'change_goods', data: todayStep.change_goods })
+        // 判断今日是否达标
+        if (now_step > that.data.targetstep) {
+          that.setData({ hasTarget: true })
+        }
         console.log(todayStep)
         // 渲染canvas
         that.printCanvas()
@@ -172,20 +177,16 @@ Page({
       ctx.setLineCap('round')
       ctx.setTextAlign('center')
 
-
       ctx.beginPath()
       ctx.setLineWidth(35)
       ctx.setStrokeStyle('#D4E8ED')
       ctx.arc(midwidth, midheight, midheight * 0.7, 0, 2 * Math.PI, false)
       ctx.stroke()
 
-
       ctx.beginPath()
       ctx.arc(midwidth, midheight, midheight * 0.62, 0, 2 * Math.PI)
       ctx.setFillStyle('#FFFFFF')
       ctx.fill()
-
-
 
       ctx.beginPath()
       ctx.setLineWidth(30)
