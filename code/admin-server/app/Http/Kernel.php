@@ -32,7 +32,7 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \App\Http\Middleware\VerifyCsrfToken::class,
+            // \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
@@ -60,6 +60,8 @@ class Kernel extends HttpKernel
         'jwt.auth'=> \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
         'jwt.refresh'=>\Tymon\JWTAuth\Middleware\RefreshToken::class,
         'jwt.api.auth' => \App\Http\Middleware\JwtAuthModel::class, //新增注册的中间件
+        'checkLogin' => \App\Http\Middleware\CheckLogin::class, //登录验证
+
 
     ];
 }

@@ -1,1 +1,5 @@
 @import 'style/weui.wxss';
+page{
+background-color:"#888";
+}
+

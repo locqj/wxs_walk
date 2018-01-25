@@ -8,13 +8,20 @@ Page({
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
-    userinfo: null
+    userinfo: null,
   },
-
-  onReady: function () {
+  // 数据加载
+  onLoad: function(options) {
+    this.setData({
+      step_day: JSON.parse(options.step_day),
+      step_month: JSON.parse(options.step_month),
+      userinfo: app.globalData.userInfo
+    })
+    
+  },
+  onReady: function (options) {
     let that = this
-    that.setData({ userinfo: app.globalData.userInfo })
-    console.log(that.data.userinfo)
+    console.log(this.data.step_day)
     wx.getSystemInfo({
       success: function (res) {
         that.setData({

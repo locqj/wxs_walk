@@ -16,9 +16,11 @@ use Illuminate\Http\Request;
 /*'middleware' => ['jwt.api.auth']*/
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
-    $api->group(['namespace' => 'App\Api\Controllers'], function ($api) {
+    $api->group(['namespace' => 'App\Api\Controllers', 'middleware'=>'web'], function ($api) {
         $api->get('getsessionkey', 'WxController@getSessionKey');
-        $api->get('decrypt', 'WxController@decrypt');
+        $api->post('decrypt', 'WxController@decrypt');
+        $api->get('clientinit', 'ClientServerController@clientInit');
+        $api->post('/client/settarget', 'ClientServerController@setTarget');
     });
 
     $api->group(['namespace' => 'App\Api\Controllers', 'middleware'=>'jwt.auth'],function ($api){

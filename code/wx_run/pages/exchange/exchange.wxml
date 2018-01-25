@@ -1,16 +1,17 @@
 <view class='content'>
-  <view class='power'>2</view>
+  <view class='power'>{{userlog.power}}</view>
   <view class='power-title'>当前能量点</view>
   <view class='list-line'></view>
 <!--  -->
-  <view class='change-list' wx:for="item">
-    <image src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1516220076&di=39849a12778a7b3c703d345a47cb722e&src=http://imgsrc.baidu.com/imgad/pic/item/f2deb48f8c5494ee114d938427f5e0fe98257ec4.jpg"   class="change-img" style='width: 146rpx; height: 140rpx'></image>
+  <view class='change-list' wx:for="{{change_goods}}" wx:for-item="item" wx:for-key="key" >
+    <image src="{{item.img}}"   class="change-img" style='width: 140rpx; height: 140rpx'></image>
     <view class='change-content'>
-      <view class='change-title'>和风蛋谷物肌肉沙sadasadassa拉梅子酱</view>
-      <view class='change-use'>兑换需要消耗<span>70点能量</span></view>
-      <view class='change-status'>库存不足</view>
+      <view class='change-title'>{{item.name}}</view>
+      <view class='change-use'>兑换消耗<span>{{item.power}}点能量</span></view>
+      <view class='change-status' wx:if="!{{ item.last_status }}">库存不足</view>
+      <view class='change-status' wx:else>还有{{item.last_num}}</view>
     </view>
-    <button class='change-btn'>兑换</button>
+    <button class='change-btn' bindtap='exchange' id="{{item.code}}" data-code="{{item.code}}">兑换</button>
     <!-- <view class='list-line item-line'></view> -->
   </view>
 <!--  -->

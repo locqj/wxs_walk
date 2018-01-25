@@ -1,3 +1,6 @@
+page {
+  background: #eee
+}
 .content {
   display: flex;
   flex-flow: column;
@@ -26,6 +29,7 @@
   padding-top: 3%;
   padding-bottom: 3%;
   border-radius: 21rpx;
+  width: 90%
   
 }
 .content .change-list image {
@@ -44,6 +48,7 @@
 .content .change-list .change-content .change-title {
   font-weight: bold;
 }
+
 .content .change-list .change-content .change-use span {
   color: #8DC4D4;
 }

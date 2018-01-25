@@ -8,5 +8,5 @@
   </swiper>
   <view class="swiper-step">{{step}}步</view>
   <view class='swiper-title'>左右滑动选择目标步数</view>
-  <button class="weui-btn set-btn">设定目标步数</button>
+  <button class="weui-btn set-btn" bindtap='sub'>设定目标步数</button>
 </view>

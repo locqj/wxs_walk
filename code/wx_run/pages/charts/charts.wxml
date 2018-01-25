@@ -21,17 +21,19 @@
             <view class='list-step'>9900</view>
           </view>
           <view class='list-line'></view>
-          <view class='charts-list' wx:for="item in 10"  wx:key="*this">
-            <view class='list-index'>1</view>
+          <view class='charts-list' wx:for="{{step_day}}"       wx:for-index="key">
+            <view class='list-index'>{{key + 1}}</view>
             <view class='list-userinfo'>
-              <image src="{{userinfo.avatarUrl}}" class='userinfo-avator'></image>
-              大猪头🐷
+              <image src="{{item.r_client_users.head_img}}" class='userinfo-avator'></image>
+              {{item.r_client_users.nickname}}
             </view>
-            <view class='list-step'>9900</view>
+            <view class='list-step'>{{item.step_day}}</view>
           </view>
-
         </view>
+
+
         <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+
           <view class='charts-list myself'>
             <view class='list-index'>1</view>
             <view class='list-userinfo'>
@@ -41,14 +43,16 @@
             <view class='list-step'>9900</view>
           </view>
           <view class='list-line'></view>
-          <view class='charts-list' wx:for="item in 10">
-            <view class='list-index'>1</view>
+
+          <view class='charts-list' wx:for="{{step_month}}" wx:for-index="key">
+            <view class='list-index'>{{ key + 1 }}</view>
             <view class='list-userinfo'>
               <image src="{{userinfo.avatarUrl}}" class='userinfo-avator'></image>
-              猪头🐷
+              {{item.r_client_users.nickname}}
             </view>
-            <view class='list-step'>9900</view>
+            <view class='list-step'>{{item.step_day}}</view>
           </view>
+
         </view>
       </view>
     </view>
